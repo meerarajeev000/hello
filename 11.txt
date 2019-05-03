@@ -1,0 +1,156 @@
+package com.example.pgrm11;
+
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.Button;
+import android.widget.EditText;
+
+public class MainActivity extends AppCompatActivity implements AdapterView.OnClickListener {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        final EditText t1=findViewById(R.id.pl1);
+        final EditText t2=findViewById(R.id.pl2);
+        final EditText t3=findViewById(R.id.pl3);
+        Button b1 = findViewById(R.id.bu1);
+        b1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String str=t1.getText().toString();
+                Integer len=str.length();
+                t3.setText(String.valueOf(len));
+
+
+            }
+        });
+        Button b2=findViewById(R.id.bu2);
+        b2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String s1=t1.getText().toString();
+                String s2=t2.getText().toString();
+                String concat=s1+s2;
+                t3.setText(String.valueOf(concat));
+            }
+        });
+        Button b3=findViewById(R.id.bu3);
+        b3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String str1=t1.getText().toString();
+                Integer len=str1.length();
+                Integer i=0;
+                String rev=" ";
+                for (i=len-1;i>=0;i--)
+                {
+                    rev=rev+str1.charAt(i);
+                }
+                t3.setText(String.valueOf(rev));
+
+            }
+        });
+        Button b4=findViewById(R.id.bu4);
+        b4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String str1=t1.getText().toString();
+                
+            }
+        });
+    }
+
+
+    @Override
+    public void onClick(View v) {
+
+
+    }
+}
+
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/pl1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        tools:layout_editor_absoluteX="5dp"
+        tools:layout_editor_absoluteY="44dp" />
+
+    <EditText
+        android:id="@+id/pl2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="129dp" />
+
+    <EditText
+        android:id="@+id/pl3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/bu1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="string length"
+        android:onClick="bu1"
+        tools:layout_editor_absoluteX="87dp"
+        tools:layout_editor_absoluteY="218dp" />
+
+    <Button
+        android:id="@+id/bu2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="bu2"
+        android:text="string concatination"
+        tools:layout_editor_absoluteX="87dp"
+        tools:layout_editor_absoluteY="294dp" />
+
+    <Button
+        android:id="@+id/bu3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="reverse"
+        android:onClick="bu3"
+        tools:layout_editor_absoluteX="87dp"
+        tools:layout_editor_absoluteY="359dp" />
+
+    <Button
+        android:id="@+id/bu4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="palindrome"
+        android:onClick="bu4"
+        tools:layout_editor_absoluteX="87dp"
+        tools:layout_editor_absoluteY="430dp" />
+
+    <Button
+        android:id="@+id/bu5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="case conversion"
+        android:onClick="bu5"
+        tools:layout_editor_absoluteX="87dp"
+        tools:layout_editor_absoluteY="506dp" />
+
+
+</LinearLayout>
