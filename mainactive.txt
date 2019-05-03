@@ -1,0 +1,31 @@
+package com.example.sumtwonums;
+
+import android.graphics.Color;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+    }
+    public void answer(View v)
+    {
+        EditText t1=findViewById(R.id.fnum);
+        EditText t2=findViewById(R.id.snum);
+        EditText t3=findViewById(R.id.result);
+        int x=Integer.parseInt(t1.getText().toString());
+        int y=Integer.parseInt(t2.getText().toString());
+        int z=x + y;
+        t3.setText(String.valueOf(x+y));
+        if (z>10) {
+            t3.setBackgroundColor(Color.GREEN);
+        }
+        else
+            t3.setBackgroundColor(Color.RED);
+    }
+}
